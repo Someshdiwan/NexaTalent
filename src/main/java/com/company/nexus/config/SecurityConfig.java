@@ -84,6 +84,7 @@ public class SecurityConfig {
         // Allow specific origins in production instead of wildcard
         configuration.setAllowedOriginPatterns(Arrays.asList(
             "http://localhost:5173",  // Frontend dev server
+            "http://localhost:5174",  // Frontend dev server (alternate port)
             "http://localhost:3000",  // Alternative frontend port
             "http://localhost:8080"   // Backend (for API docs, etc.)
         ));

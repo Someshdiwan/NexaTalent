@@ -167,16 +167,16 @@ public class DataLoader implements CommandLineRunner {
     }
 
     private void createSnapshotForSarah(Engineer sarah) {
-        Map<String, Integer> capabilities = new HashMap<>();
-        capabilities.put("SYSTEM_DESIGN", 3);
-        capabilities.put("TECHNICAL_DEPTH", 3);
-        capabilities.put("CODE_OWNERSHIP", 4);
-        capabilities.put("DEBUGGING", 3);
-        capabilities.put("COMMUNICATION", 3);
-        capabilities.put("PRODUCT_THINKING", 2);
-        capabilities.put("EXECUTION", 4);
-        capabilities.put("MENTORSHIP", 2);
-        capabilities.put("ARCHITECTURE_VISION", 2);
+        Map<CapabilitySnapshot.Capability, Integer> capabilities = new HashMap<>();
+        capabilities.put(CapabilitySnapshot.Capability.SYSTEM_DESIGN, 3);
+        capabilities.put(CapabilitySnapshot.Capability.TECHNICAL_DEPTH, 3);
+        capabilities.put(CapabilitySnapshot.Capability.CODE_OWNERSHIP, 4);
+        capabilities.put(CapabilitySnapshot.Capability.DEBUGGING, 3);
+        capabilities.put(CapabilitySnapshot.Capability.COMMUNICATION, 3);
+        capabilities.put(CapabilitySnapshot.Capability.PRODUCT_THINKING, 2);
+        capabilities.put(CapabilitySnapshot.Capability.EXECUTION, 4);
+        capabilities.put(CapabilitySnapshot.Capability.MENTORSHIP, 2);
+        capabilities.put(CapabilitySnapshot.Capability.ARCHITECTURE_VISION, 2);
 
         CapabilitySnapshot snapshot = CapabilitySnapshot.builder()
                 .engineer(sarah)
@@ -193,16 +193,16 @@ public class DataLoader implements CommandLineRunner {
     }
 
     private void createSnapshotForMarcus(Engineer marcus) {
-        Map<String, Integer> capabilities = new HashMap<>();
-        capabilities.put("SYSTEM_DESIGN", 2);
-        capabilities.put("TECHNICAL_DEPTH", 2);
-        capabilities.put("CODE_OWNERSHIP", 3);
-        capabilities.put("DEBUGGING", 2);
-        capabilities.put("COMMUNICATION", 2);
-        capabilities.put("PRODUCT_THINKING", 1);
-        capabilities.put("EXECUTION", 3);
-        capabilities.put("MENTORSHIP", 1);
-        capabilities.put("ARCHITECTURE_VISION", 1);
+        Map<CapabilitySnapshot.Capability, Integer> capabilities = new HashMap<>();
+        capabilities.put(CapabilitySnapshot.Capability.SYSTEM_DESIGN, 2);
+        capabilities.put(CapabilitySnapshot.Capability.TECHNICAL_DEPTH, 2);
+        capabilities.put(CapabilitySnapshot.Capability.CODE_OWNERSHIP, 3);
+        capabilities.put(CapabilitySnapshot.Capability.DEBUGGING, 2);
+        capabilities.put(CapabilitySnapshot.Capability.COMMUNICATION, 2);
+        capabilities.put(CapabilitySnapshot.Capability.PRODUCT_THINKING, 1);
+        capabilities.put(CapabilitySnapshot.Capability.EXECUTION, 3);
+        capabilities.put(CapabilitySnapshot.Capability.MENTORSHIP, 1);
+        capabilities.put(CapabilitySnapshot.Capability.ARCHITECTURE_VISION, 1);
 
         CapabilitySnapshot snapshot = CapabilitySnapshot.builder()
                 .engineer(marcus)
@@ -219,16 +219,16 @@ public class DataLoader implements CommandLineRunner {
     }
 
     private void createSnapshotForPriya(Engineer priya) {
-        Map<String, Integer> capabilities = new HashMap<>();
-        capabilities.put("SYSTEM_DESIGN", 4);
-        capabilities.put("TECHNICAL_DEPTH", 3);
-        capabilities.put("CODE_OWNERSHIP", 4);
-        capabilities.put("DEBUGGING", 3);
-        capabilities.put("COMMUNICATION", 4);
-        capabilities.put("PRODUCT_THINKING", 3);
-        capabilities.put("EXECUTION", 4);
-        capabilities.put("MENTORSHIP", 3);
-        capabilities.put("ARCHITECTURE_VISION", 3);
+        Map<CapabilitySnapshot.Capability, Integer> capabilities = new HashMap<>();
+        capabilities.put(CapabilitySnapshot.Capability.SYSTEM_DESIGN, 4);
+        capabilities.put(CapabilitySnapshot.Capability.TECHNICAL_DEPTH, 3);
+        capabilities.put(CapabilitySnapshot.Capability.CODE_OWNERSHIP, 4);
+        capabilities.put(CapabilitySnapshot.Capability.DEBUGGING, 3);
+        capabilities.put(CapabilitySnapshot.Capability.COMMUNICATION, 4);
+        capabilities.put(CapabilitySnapshot.Capability.PRODUCT_THINKING, 3);
+        capabilities.put(CapabilitySnapshot.Capability.EXECUTION, 4);
+        capabilities.put(CapabilitySnapshot.Capability.MENTORSHIP, 3);
+        capabilities.put(CapabilitySnapshot.Capability.ARCHITECTURE_VISION, 3);
 
         CapabilitySnapshot snapshot = CapabilitySnapshot.builder()
                 .engineer(priya)
@@ -245,16 +245,16 @@ public class DataLoader implements CommandLineRunner {
     }
 
     private void createSnapshotForAlex(Engineer alex) {
-        Map<String, Integer> capabilities = new HashMap<>();
-        capabilities.put("SYSTEM_DESIGN", 4);
-        capabilities.put("TECHNICAL_DEPTH", 4);
-        capabilities.put("CODE_OWNERSHIP", 3);
-        capabilities.put("DEBUGGING", 4);
-        capabilities.put("COMMUNICATION", 2);
-        capabilities.put("PRODUCT_THINKING", 3);
-        capabilities.put("EXECUTION", 3);
-        capabilities.put("MENTORSHIP", 2);
-        capabilities.put("ARCHITECTURE_VISION", 4);
+        Map<CapabilitySnapshot.Capability, Integer> capabilities = new HashMap<>();
+        capabilities.put(CapabilitySnapshot.Capability.SYSTEM_DESIGN, 4);
+        capabilities.put(CapabilitySnapshot.Capability.TECHNICAL_DEPTH, 4);
+        capabilities.put(CapabilitySnapshot.Capability.CODE_OWNERSHIP, 3);
+        capabilities.put(CapabilitySnapshot.Capability.DEBUGGING, 4);
+        capabilities.put(CapabilitySnapshot.Capability.COMMUNICATION, 2);
+        capabilities.put(CapabilitySnapshot.Capability.PRODUCT_THINKING, 3);
+        capabilities.put(CapabilitySnapshot.Capability.EXECUTION, 3);
+        capabilities.put(CapabilitySnapshot.Capability.MENTORSHIP, 2);
+        capabilities.put(CapabilitySnapshot.Capability.ARCHITECTURE_VISION, 4);
 
         CapabilitySnapshot snapshot = CapabilitySnapshot.builder()
                 .engineer(alex)
@@ -271,16 +271,16 @@ public class DataLoader implements CommandLineRunner {
     }
 
     private void createSnapshotForSonal(Engineer sonal) {
-        Map<String, Integer> capabilities = new HashMap<>();
-        capabilities.put("SYSTEM_DESIGN", 1);
-        capabilities.put("TECHNICAL_DEPTH", 2);
-        capabilities.put("CODE_OWNERSHIP", 2);
-        capabilities.put("DEBUGGING", 1);
-        capabilities.put("COMMUNICATION", 2);
-        capabilities.put("PRODUCT_THINKING", 1);
-        capabilities.put("EXECUTION", 2);
-        capabilities.put("MENTORSHIP", 0);
-        capabilities.put("ARCHITECTURE_VISION", 1);
+        Map<CapabilitySnapshot.Capability, Integer> capabilities = new HashMap<>();
+        capabilities.put(CapabilitySnapshot.Capability.SYSTEM_DESIGN, 1);
+        capabilities.put(CapabilitySnapshot.Capability.TECHNICAL_DEPTH, 2);
+        capabilities.put(CapabilitySnapshot.Capability.CODE_OWNERSHIP, 2);
+        capabilities.put(CapabilitySnapshot.Capability.DEBUGGING, 1);
+        capabilities.put(CapabilitySnapshot.Capability.COMMUNICATION, 2);
+        capabilities.put(CapabilitySnapshot.Capability.PRODUCT_THINKING, 1);
+        capabilities.put(CapabilitySnapshot.Capability.EXECUTION, 2);
+        capabilities.put(CapabilitySnapshot.Capability.MENTORSHIP, 0);
+        capabilities.put(CapabilitySnapshot.Capability.ARCHITECTURE_VISION, 1);
 
         CapabilitySnapshot snapshot = CapabilitySnapshot.builder()
                 .engineer(sonal)
