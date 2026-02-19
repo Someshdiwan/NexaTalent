@@ -21,7 +21,6 @@ import java.io.IOException;
 @RequiredArgsConstructor
 @Slf4j
 public class AuthTokenFilter extends OncePerRequestFilter {
-
     private final JwtUtils jwtUtils;
     private final UserDetailsService userDetailsService;
 
@@ -54,7 +53,6 @@ public class AuthTokenFilter extends OncePerRequestFilter {
         if (StringUtils.hasText(headerAuth) && headerAuth.startsWith("Bearer ")) {
             return headerAuth.substring(7);
         }
-
         return null;
     }
 }
