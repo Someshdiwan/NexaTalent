@@ -16,10 +16,7 @@ import java.time.LocalDateTime;
 import java.util.HashMap;
 import java.util.Map;
 
-/**
- * DataLoader - Seeds initial data into the database on application startup.
- * Only runs if the database is empty.
- */
+/* DataLoader - Seeds initial data into the database on application startup. Only runs if the database is empty. */
 @Component
 @RequiredArgsConstructor
 @Slf4j
@@ -34,7 +31,7 @@ public class DataLoader implements CommandLineRunner {
     public void run(String... args) throws Exception {
         log.info("Starting DataLoader...");
 
-        // Only seed if database is empty
+        // Only seed if a database is empty
         if (userRepository.count() > 0) {
             log.info("Database already contains data. Skipping seeding.");
             return;
@@ -42,26 +39,26 @@ public class DataLoader implements CommandLineRunner {
 
         log.info("Database is empty. Seeding initial data...");
 
-        // 1. Create Admin User
+        // first Create Admin User
         createAdminUser();
 
-        // 2. Create Engineers
+        // Second Create Engineers
         Engineer sarah = createSarahChen();
         Engineer marcus = createMarcusRodriguez();
         Engineer priya = createPriyaSharma();
         Engineer alex = createAlexKim();
         Engineer sonal = createSonalDiwan();
 
-        // 3. Create Capability Snapshots
+        // 3rd Create Capability Snapshots
         createSnapshotForSarah(sarah);
         createSnapshotForMarcus(marcus);
         createSnapshotForPriya(priya);
         createSnapshotForAlex(alex);
         createSnapshotForSonal(sonal);
 
-        log.info("✅ Data seeding completed successfully!");
-        log.info("📊 Seeded: 1 admin user, 5 engineers, 5 capability snapshots");
-        log.info("🔐 Admin credentials: admin@nexus.com / admin123");
+        log.info("Data seeding completed successfully!");
+        log.info("Seeded: 1 admin user, 5 engineers, 5 capability snapshots");
+        log.info("Admin credentials: admin@nexus.com / admin123");
     }
 
     private void createAdminUser() {
@@ -78,7 +75,7 @@ public class DataLoader implements CommandLineRunner {
                 .build();
 
         userRepository.save(admin);
-        log.info("✅ Created admin user: admin@nexus.com");
+        log.info("Created admin user: admin@nexus.com");
     }
 
     private Engineer createSarahChen() {
@@ -94,7 +91,7 @@ public class DataLoader implements CommandLineRunner {
                 .build();
 
         engineerRepository.save(sarah);
-        log.info("✅ Created engineer: Sarah Chen (L3, Platform Engineering)");
+        log.info("Created engineer: Sarah Chen (L3, Platform Engineering)");
         return sarah;
     }
 
@@ -111,7 +108,7 @@ public class DataLoader implements CommandLineRunner {
                 .build();
 
         engineerRepository.save(marcus);
-        log.info("✅ Created engineer: Marcus Rodriguez (L2, Platform Engineering)");
+        log.info("Created engineer: Marcus Rodriguez (L2, Platform Engineering)");
         return marcus;
     }
 
@@ -128,7 +125,7 @@ public class DataLoader implements CommandLineRunner {
                 .build();
 
         engineerRepository.save(priya);
-        log.info("✅ Created engineer: Priya Sharma (L4, Infrastructure)");
+        log.info("Created engineer: Priya Sharma (L4, Infrastructure)");
         return priya;
     }
 
@@ -145,7 +142,7 @@ public class DataLoader implements CommandLineRunner {
                 .build();
 
         engineerRepository.save(alex);
-        log.info("✅ Created engineer: Alex Kim (L4, AI/ML)");
+        log.info("Created engineer: Alex Kim (L4, AI/ML)");
         return alex;
     }
 
@@ -162,7 +159,7 @@ public class DataLoader implements CommandLineRunner {
                 .build();
 
         engineerRepository.save(sonal);
-        log.info("✅ Created engineer: sonal diwan (L1, Frontend Engineering)");
+        log.info("Created engineer: sonal diwan (L1, Frontend Engineering)");
         return sonal;
     }
 
@@ -189,7 +186,7 @@ public class DataLoader implements CommandLineRunner {
                 .build();
 
         snapshotRepository.save(snapshot);
-        log.info("✅ Created capability snapshot for Sarah Chen");
+        log.info("Created capability snapshot for Sarah Chen");
     }
 
     private void createSnapshotForMarcus(Engineer marcus) {
@@ -215,7 +212,7 @@ public class DataLoader implements CommandLineRunner {
                 .build();
 
         snapshotRepository.save(snapshot);
-        log.info("✅ Created capability snapshot for Marcus Rodriguez");
+        log.info("Created capability snapshot for Marcus Rodriguez");
     }
 
     private void createSnapshotForPriya(Engineer priya) {
@@ -241,7 +238,7 @@ public class DataLoader implements CommandLineRunner {
                 .build();
 
         snapshotRepository.save(snapshot);
-        log.info("✅ Created capability snapshot for Priya Sharma");
+        log.info("Created capability snapshot for Priya Sharma");
     }
 
     private void createSnapshotForAlex(Engineer alex) {
@@ -267,7 +264,7 @@ public class DataLoader implements CommandLineRunner {
                 .build();
 
         snapshotRepository.save(snapshot);
-        log.info("✅ Created capability snapshot for Alex Kim");
+        log.info("Created capability snapshot for Alex Kim");
     }
 
     private void createSnapshotForSonal(Engineer sonal) {
@@ -293,6 +290,6 @@ public class DataLoader implements CommandLineRunner {
                 .build();
 
         snapshotRepository.save(snapshot);
-        log.info("✅ Created capability snapshot for sonal diwan");
+        log.info("Created capability snapshot for sonal diwan");
     }
 }
