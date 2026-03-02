@@ -16,11 +16,11 @@ import java.util.Optional;
 @CrossOrigin(origins = "*", maxAge = 3600)
 @RequiredArgsConstructor
 public class EvaluationController {
-
     private final EvaluationService evaluationService;
 
     @PostMapping
-    public ResponseEntity<CapabilitySnapshotResponse> submitEvaluation(@Valid @RequestBody SubmitEvaluationRequest request) {
+    public ResponseEntity<CapabilitySnapshotResponse> submitEvaluation(@Valid @RequestBody
+                                                                           SubmitEvaluationRequest request) {
         CapabilitySnapshotResponse response = evaluationService.submitEvaluation(request);
         return ResponseEntity.ok(response);
     }
