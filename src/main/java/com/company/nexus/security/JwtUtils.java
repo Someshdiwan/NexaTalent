@@ -14,7 +14,6 @@ import java.util.Date;
 @Component
 @Slf4j
 public class JwtUtils {
-
     @Value("${app.jwt.secret}")
     private String jwtSecret;
 
@@ -63,7 +62,6 @@ public class JwtUtils {
         } catch (IllegalArgumentException e) {
             log.error("JWT claims string is empty: {}", e.getMessage());
         }
-
         return false;
     }
 }
