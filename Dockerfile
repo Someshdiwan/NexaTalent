@@ -2,6 +2,7 @@
 FROM maven:3.9-eclipse-temurin-17 AS build
 WORKDIR /app
 COPY pom.xml .
+
 # Download dependencies first (better layer caching)
 RUN mvn dependency:go-offline -q
 COPY src ./src
