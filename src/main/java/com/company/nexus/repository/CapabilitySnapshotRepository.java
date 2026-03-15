@@ -10,7 +10,6 @@ import org.springframework.stereotype.Repository;
 
 import java.util.List;
 
-
 @Repository
 public interface CapabilitySnapshotRepository extends JpaRepository<CapabilitySnapshot, Long> {
 
