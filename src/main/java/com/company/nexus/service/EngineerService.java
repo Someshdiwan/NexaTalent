@@ -30,8 +30,6 @@ public class EngineerService {
         return EngineerResponse.fromEntity(savedEngineer);
     }
 
-
-
     public EngineerResponse getEngineerById(String id) {
         Engineer engineer = findEngineerById(Long.parseLong(id));
         return EngineerResponse.fromEntity(engineer);
@@ -87,3 +85,4 @@ public class EngineerService {
                 .orElseThrow(() -> new ResourceNotFoundException("Engineer not found with email: " + email));
     }
 }
+
