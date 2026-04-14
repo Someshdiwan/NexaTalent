@@ -29,7 +29,6 @@ public class EngineerService {
         Engineer savedEngineer = engineerRepository.save(engineer);
         return EngineerResponse.fromEntity(savedEngineer);
     }
-
     public EngineerResponse getEngineerById(String id) {
         Engineer engineer = findEngineerById(Long.parseLong(id));
         return EngineerResponse.fromEntity(engineer);
@@ -68,7 +67,6 @@ public class EngineerService {
         Engineer updatedEngineer = engineerRepository.save(engineer);
         return EngineerResponse.fromEntity(updatedEngineer);
     }
-
     @Transactional
     public void deleteEngineer(String id) {
         Engineer engineer = findEngineerById(Long.parseLong(id));
@@ -85,4 +83,3 @@ public class EngineerService {
                 .orElseThrow(() -> new ResourceNotFoundException("Engineer not found with email: " + email));
     }
 }
-
