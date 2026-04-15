@@ -21,7 +21,6 @@ import java.util.Map;
 @RequiredArgsConstructor
 @Slf4j
 public class DataLoader implements CommandLineRunner {
-
     private final UserRepository userRepository;
     private final EngineerRepository engineerRepository;
     private final CapabilitySnapshotRepository snapshotRepository;
@@ -145,7 +144,6 @@ public class DataLoader implements CommandLineRunner {
         log.info("Created engineer: Alex Kim (L4, AI/ML)");
         return alex;
     }
-
     private Engineer createSonalDiwan() {
         Engineer sonal = Engineer.builder()
                 .name("sonal diwan")
@@ -236,7 +234,6 @@ public class DataLoader implements CommandLineRunner {
                 .capabilities(capabilities)
                 .notes("Excellent leadership and technical skills. Ready for L5 consideration.")
                 .build();
-
         snapshotRepository.save(snapshot);
         log.info("Created capability snapshot for Priya Sharma");
     }
@@ -288,7 +285,6 @@ public class DataLoader implements CommandLineRunner {
                 .capabilities(capabilities)
                 .notes("New hire showing good potential. Focus on building technical depth.")
                 .build();
-
         snapshotRepository.save(snapshot);
         log.info("Created capability snapshot for sonal diwan");
     }
