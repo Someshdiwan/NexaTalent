@@ -29,11 +29,13 @@ public class DataLoader implements CommandLineRunner {
     @Override
     public void run(String... args) throws Exception {
         log.info("Starting DataLoader...");
+
         // Only seed if a database is empty
         if (userRepository.count() > 0) {
             log.info("Database already contains data. Skipping seeding.");
             return;
         }
+
         log.info("Database is empty. Seeding initial data...");
 
         // first Create Admin User
