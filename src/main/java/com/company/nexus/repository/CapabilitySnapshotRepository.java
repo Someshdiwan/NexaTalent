@@ -5,7 +5,6 @@ import java.util.Optional;
 import com.company.nexus.entity.CapabilitySnapshot;
 import com.company.nexus.entity.Engineer;
 import org.springframework.data.jpa.repository.JpaRepository;
-import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
@@ -15,8 +14,10 @@ public interface CapabilitySnapshotRepository extends JpaRepository<CapabilitySn
 
     List<CapabilitySnapshot> findByEngineerIdOrderByEvaluatedAtDesc(Long engineerId);
 
+
     List<CapabilitySnapshot> findByEngineerIdAndEngineerCurrentLevelOrderByEvaluatedAtDesc(Long engineerId,
                                                                                            Engineer.Level level);
+
 
     Optional<CapabilitySnapshot> findTopByEngineerIdOrderByEvaluatedAtDesc(Long engineerId);
 
