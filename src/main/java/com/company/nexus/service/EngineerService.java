@@ -20,7 +20,6 @@ public class EngineerService {
     @Transactional
     public EngineerResponse createEngineer(CreateEngineerRequest request) {
 
-
         if (engineerRepository.findByEmail(request.getEmail()).isPresent()) {
             throw new IllegalArgumentException("Engineer with email " + request.getEmail() + " already exists");
         }
