@@ -207,6 +207,7 @@ public class DataLoader implements CommandLineRunner {
                 .notes("Solid progress. Focus on system design for L3 readiness.")
                 .build();
 
+
         snapshotRepository.save(snapshot);
         log.info("Created capability snapshot for Marcus Rodriguez");
     }
@@ -232,6 +233,7 @@ public class DataLoader implements CommandLineRunner {
                 .capabilities(capabilities)
                 .notes("Excellent leadership and technical skills. Ready for L5 consideration.")
                 .build();
+
         snapshotRepository.save(snapshot);
         log.info("Created capability snapshot for Priya Sharma");
     }
@@ -283,6 +285,7 @@ public class DataLoader implements CommandLineRunner {
                 .capabilities(capabilities)
                 .notes("New hire showing good potential. Focus on building technical depth.")
                 .build();
+
         snapshotRepository.save(snapshot);
         log.info("Created capability snapshot for sonal diwan");
     }
