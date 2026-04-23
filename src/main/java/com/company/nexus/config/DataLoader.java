@@ -259,7 +259,6 @@ public class DataLoader implements CommandLineRunner {
                 .capabilities(capabilities)
                 .notes("Deep technical expertise in ML/AI. Strong architectural vision.")
                 .build();
-
         snapshotRepository.save(snapshot);
         log.info("Created capability snapshot for Alex Kim");
     }
@@ -275,7 +274,6 @@ public class DataLoader implements CommandLineRunner {
         capabilities.put(CapabilitySnapshot.Capability.EXECUTION, 2);
         capabilities.put(CapabilitySnapshot.Capability.MENTORSHIP, 0);
         capabilities.put(CapabilitySnapshot.Capability.ARCHITECTURE_VISION, 1);
-
         CapabilitySnapshot snapshot = CapabilitySnapshot.builder()
                 .engineer(sonal)
                 .evaluatorId("E-9004")
@@ -285,7 +283,6 @@ public class DataLoader implements CommandLineRunner {
                 .capabilities(capabilities)
                 .notes("New hire showing good potential. Focus on building technical depth.")
                 .build();
-
         snapshotRepository.save(snapshot);
         log.info("Created capability snapshot for sonal diwan");
     }
