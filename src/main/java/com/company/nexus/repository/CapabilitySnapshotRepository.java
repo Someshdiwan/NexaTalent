@@ -20,3 +20,4 @@ public interface CapabilitySnapshotRepository extends JpaRepository<CapabilitySn
 
     List<CapabilitySnapshot> findByEvaluatorIdOrderByEvaluatedAtDesc(String evaluatorId);
 }
+
