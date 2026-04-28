@@ -13,11 +13,21 @@ import java.util.List;
 public interface CapabilitySnapshotRepository extends JpaRepository<CapabilitySnapshot, Long> {
     List<CapabilitySnapshot> findByEngineerIdOrderByEvaluatedAtDesc(Long engineerId);
 
+
+
+
     List<CapabilitySnapshot> findByEngineerIdAndEngineerCurrentLevelOrderByEvaluatedAtDesc(Long engineerId,
                                                                                            Engineer.Level level);
 
+
+
+
+
     Optional<CapabilitySnapshot> findTopByEngineerIdOrderByEvaluatedAtDesc(Long engineerId);
+
+
+
+
 
     List<CapabilitySnapshot> findByEvaluatorIdOrderByEvaluatedAtDesc(String evaluatorId);
 }
-
