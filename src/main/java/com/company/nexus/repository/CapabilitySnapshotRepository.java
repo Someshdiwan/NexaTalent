@@ -25,10 +25,8 @@ public interface CapabilitySnapshotRepository extends JpaRepository<CapabilitySn
 
 
 
-
-
-
     Optional<CapabilitySnapshot> findTopByEngineerIdOrderByEvaluatedAtDesc(Long engineerId);
+
 
 
 
