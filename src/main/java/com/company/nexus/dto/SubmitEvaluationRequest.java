@@ -58,7 +58,6 @@ public class SubmitEvaluationRequest {
             }
         }
 
-
         return CapabilitySnapshot.builder()
                 .engineer(engineer)
                 .evaluatorId(evaluatorId)
