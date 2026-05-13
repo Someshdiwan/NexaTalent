@@ -49,13 +49,15 @@ public class SubmitEvaluationRequest {
                 CapabilitySnapshot.Capability capability = CapabilitySnapshot.Capability.valueOf
                         (entry.getKey().toUpperCase());
                 capabilityMap.put(capability, score);
-            } catch (IllegalArgumentException e) {
+            }
+            catch (IllegalArgumentException e) {
                 throw new IllegalArgumentException(
                     "Invalid capability name: " + entry.getKey() + ". Must be one of: " +
                     java.util.Arrays.toString(CapabilitySnapshot.Capability.values())
                 );
             }
         }
+
 
         return CapabilitySnapshot.builder()
                 .engineer(engineer)
