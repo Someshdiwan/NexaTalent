@@ -75,10 +75,6 @@ public class SecurityConfig {
         // For H2 console
         http.headers(headers -> headers.frameOptions().sameOrigin());
 
-
-
-
-
         return http.build();
     }
 
