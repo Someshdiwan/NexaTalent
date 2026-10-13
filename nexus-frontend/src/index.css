@@ -1,0 +1,99 @@
+/* ============================================
+   BASE STYLES - Minimal & Clean
+   ============================================ */
+
+* { 
+    margin: 0; 
+    padding: 0; 
+    box-sizing: border-box; 
+}
+
+body {
+    font-family: 'Comic Sans MS', 'Comic Neue', cursive, sans-serif !important;
+    background-color: var(--md-sys-color-background);
+    color: var(--md-sys-color-on-background);
+    transition: background-color var(--motion-duration-medium) var(--motion-easing-standard),
+                color var(--motion-duration-medium) var(--motion-easing-standard);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    line-height: 1.5;
+}
+
+/* ============================================
+   APP SHELL
+   ============================================ */
+
+.app {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* ============================================
+   ANIMATIONS - Physics-Based
+   ============================================ */
+
+@keyframes fadeIn {
+    from { 
+        opacity: 0; 
+        transform: translateY(10px); 
+    }
+    to { 
+        opacity: 1; 
+        transform: translateY(0); 
+    }
+}
+
+@keyframes slideInFromRight {
+    from {
+        opacity: 0;
+        transform: translateX(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes scaleIn {
+    from {
+        opacity: 0;
+        transform: scale(0.95);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+.fade-in {
+    animation: fadeIn var(--motion-duration-medium) var(--motion-easing-emphasized) forwards;
+}
+
+.slide-in-right {
+    animation: slideInFromRight var(--motion-duration-medium) var(--motion-easing-emphasized) forwards;
+}
+
+.scale-in {
+    animation: scaleIn var(--motion-duration-medium) var(--motion-easing-emphasized) forwards;
+}
+
+/* ============================================
+   UTILITY CLASSES
+   ============================================ */
+
+.no-scrollbar::-webkit-scrollbar {
+    display: none;
+}
+
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+}

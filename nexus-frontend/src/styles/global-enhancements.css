@@ -1,0 +1,324 @@
+/* ============================================
+   GLOBAL ENHANCEMENTS - Optimized & Physics-Based
+   ============================================ */
+
+/* Force Comic Sans MS on ALL elements */
+*, *::before, *::after,
+input, textarea, select, button, a, span, div, p, h1, h2, h3, h4, h5, h6,
+li, td, th, label, option {
+    font-family: 'Comic Sans MS', 'Comic Neue', cursive, sans-serif !important;
+}
+
+/* ============================================
+   PERFORMANCE OPTIMIZATIONS
+   ============================================ */
+
+/* GPU Acceleration for Animations */
+button, .card, [class*="card"], [class*="section"], 
+[class*="form-section"], input, textarea, select {
+    transform: translateZ(0);
+    backface-visibility: hidden;
+    perspective: 1000px;
+}
+
+/* ============================================
+   ENHANCED BUTTON ANIMATIONS - Physics-Based
+   ============================================ */
+button {
+    transition: transform var(--motion-duration-short) var(--motion-easing-decelerate) !important,
+                background-color var(--motion-duration-short) var(--motion-easing-standard) !important,
+                box-shadow var(--motion-duration-short) var(--motion-easing-standard) !important;
+    position: relative;
+    overflow: hidden;
+    will-change: transform, background-color;
+}
+
+button::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.3);
+    transform: translate(-50%, -50%);
+    transition: width var(--motion-duration-medium) var(--motion-easing-decelerate),
+                height var(--motion-duration-medium) var(--motion-easing-decelerate);
+    pointer-events: none;
+    will-change: width, height;
+}
+
+button:active::after {
+    width: 300px;
+    height: 300px;
+}
+
+button:hover {
+    transform: translateY(-2px) scale(1.02) !important;
+    box-shadow: var(--md-sys-elevation-3) !important;
+}
+
+button:active {
+    transform: translateY(0) scale(0.98) !important;
+    transition-duration: var(--motion-duration-short) !important;
+}
+
+/* ============================================
+   ENHANCED CARD ANIMATIONS - Smooth Physics
+   ============================================ */
+.card, [class*="card"], [class*="section"], [class*="form-section"] {
+    transition: transform var(--motion-duration-medium) var(--motion-easing-decelerate) !important,
+                box-shadow var(--motion-duration-medium) var(--motion-easing-standard) !important,
+                border-color var(--motion-duration-medium) var(--motion-easing-standard) !important;
+    animation: fadeIn var(--motion-duration-medium) var(--motion-easing-emphasized) forwards;
+    will-change: transform, box-shadow;
+}
+
+.card:hover, [class*="card"]:hover, [class*="section"]:hover, [class*="form-section"]:hover {
+    transform: translateY(-4px) scale(1.01) !important;
+    box-shadow: var(--md-sys-elevation-4) !important;
+}
+
+/* ============================================
+   ENHANCED INPUT ANIMATIONS
+   ============================================ */
+input, textarea, select {
+    transition: transform var(--motion-duration-short) var(--motion-easing-decelerate) !important,
+                box-shadow var(--motion-duration-short) var(--motion-easing-standard) !important,
+                border-color var(--motion-duration-short) var(--motion-easing-standard) !important;
+    will-change: transform, box-shadow;
+}
+
+input:focus, textarea:focus, select:focus {
+    transform: scale(1.01) !important;
+    box-shadow: 0 0 0 3px rgba(26, 115, 232, 0.1), var(--md-sys-elevation-2) !important;
+}
+
+input:focus:invalid, textarea:focus:invalid {
+    box-shadow: 0 0 0 3px rgba(234, 67, 53, 0.1), var(--md-sys-elevation-2) !important;
+}
+
+/* ============================================
+   SMOOTH PAGE TRANSITIONS
+   ============================================ */
+.view-transition, [class*="page"], [class*="container"] {
+    animation: fadeIn var(--motion-duration-medium) var(--motion-easing-emphasized) forwards;
+    will-change: opacity, transform;
+}
+
+/* ============================================
+   ENHANCED TABLE ROW ANIMATIONS
+   ============================================ */
+tr, [class*="row"], [class*="table-row"] {
+    transition: transform var(--motion-duration-short) var(--motion-easing-decelerate) !important,
+                background-color var(--motion-duration-short) var(--motion-easing-standard) !important;
+    will-change: transform, background-color;
+}
+
+tr:hover, [class*="row"]:hover, [class*="table-row"]:hover {
+    transform: translateX(4px) !important;
+    background: var(--md-sys-color-surface-container) !important;
+}
+
+/* ============================================
+   SMOOTH SCROLL
+   ============================================ */
+html {
+    scroll-behavior: smooth;
+}
+
+/* ============================================
+   ENHANCED DARK MODE TRANSITIONS
+   ============================================ */
+.dark * {
+    transition: background-color var(--motion-duration-medium) var(--motion-easing-standard),
+                color var(--motion-duration-medium) var(--motion-easing-standard),
+                border-color var(--motion-duration-medium) var(--motion-easing-standard) !important;
+}
+
+/* ============================================
+   LOADING STATES - Shimmer Effect
+   ============================================ */
+@keyframes shimmer {
+    0% {
+        background-position: -1000px 0;
+    }
+    100% {
+        background-position: 1000px 0;
+    }
+}
+
+.loading {
+    background: linear-gradient(
+        90deg,
+        var(--md-sys-color-surface-container) 0%,
+        var(--md-sys-color-surface-container-high) 50%,
+        var(--md-sys-color-surface-container) 100%
+    );
+    background-size: 1000px 100%;
+    animation: shimmer 2s infinite;
+    will-change: background-position;
+}
+
+/* ============================================
+   RIPPLE EFFECT - Material Design
+   ============================================ */
+@keyframes ripple {
+    0% {
+        transform: scale(0);
+        opacity: 1;
+    }
+    100% {
+        transform: scale(4);
+        opacity: 0;
+    }
+}
+
+.ripple {
+    position: relative;
+    overflow: hidden;
+}
+
+.ripple::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.5);
+    transform: translate(-50%, -50%);
+    animation: ripple 0.6s var(--motion-easing-decelerate);
+    pointer-events: none;
+    will-change: transform, opacity;
+}
+
+/* ============================================
+   STAGGER ANIMATION FOR LISTS
+   ============================================ */
+.animate-stagger > * {
+    opacity: 0;
+    animation: fadeIn var(--motion-duration-medium) var(--motion-easing-emphasized) forwards;
+    will-change: opacity, transform;
+}
+
+.animate-stagger > *:nth-child(1) { animation-delay: 0ms; }
+.animate-stagger > *:nth-child(2) { animation-delay: 50ms; }
+.animate-stagger > *:nth-child(3) { animation-delay: 100ms; }
+.animate-stagger > *:nth-child(4) { animation-delay: 150ms; }
+.animate-stagger > *:nth-child(5) { animation-delay: 200ms; }
+.animate-stagger > *:nth-child(6) { animation-delay: 250ms; }
+.animate-stagger > *:nth-child(7) { animation-delay: 300ms; }
+.animate-stagger > *:nth-child(8) { animation-delay: 350ms; }
+.animate-stagger > *:nth-child(9) { animation-delay: 400ms; }
+.animate-stagger > *:nth-child(10) { animation-delay: 450ms; }
+
+/* ============================================
+   ENHANCED FOCUS STATES
+   ============================================ */
+*:focus-visible {
+    outline: 2px solid var(--md-sys-color-primary) !important;
+    outline-offset: 3px !important;
+    border-radius: var(--border-radius-sm) !important;
+    transition: outline var(--motion-duration-short) var(--motion-easing-standard) !important;
+}
+
+/* ============================================
+   SMOOTH HOVER EFFECTS
+   ============================================ */
+a, button, [role="button"] {
+    transition: transform var(--motion-duration-short) var(--motion-easing-decelerate) !important,
+                color var(--motion-duration-short) var(--motion-easing-standard) !important;
+    will-change: transform;
+}
+
+a:hover, button:hover, [role="button"]:hover {
+    transform: translateY(-1px) !important;
+}
+
+/* ============================================
+   ENHANCED SELECTION
+   ============================================ */
+::selection {
+    background-color: var(--md-sys-color-primary) !important;
+    color: var(--md-sys-color-on-primary) !important;
+}
+
+::-moz-selection {
+    background-color: var(--md-sys-color-primary) !important;
+    color: var(--md-sys-color-on-primary) !important;
+}
+
+/* ============================================
+   FIX LIGHT MODE TEXT CONTRAST - Enhanced
+   ============================================ */
+
+/* Ensure proper contrast in both modes */
+body {
+    color: var(--md-sys-color-on-background) !important;
+}
+
+/* Headings - Primary contrast */
+h1, h2, h3, h4, h5, h6 {
+    color: var(--md-sys-color-on-surface) !important;
+}
+
+/* Main text - Good contrast */
+p, span, div, li, td, th {
+    color: var(--md-sys-color-on-surface) !important;
+}
+
+/* Secondary text - Still visible but less prominent */
+.nav-tab, .icon-btn, .search-input::placeholder,
+.stat-label, .engineer-email, .result-meta,
+.hero-description, .feature-description, .step-description {
+    color: var(--md-sys-color-on-surface-variant) !important;
+}
+
+/* Specific overrides for better contrast */
+.stat-value, .engineer-name, .result-name, .hero-title, .feature-title, .step-title {
+    color: var(--md-sys-color-on-surface) !important;
+}
+
+/* Links and interactive elements */
+a, button {
+    color: var(--md-sys-color-primary) !important;
+}
+
+a:hover, button:hover {
+    color: var(--md-sys-color-primary) !important;
+}
+
+/* Form elements */
+input, textarea, select {
+    color: var(--md-sys-color-on-surface) !important;
+}
+
+input::placeholder, textarea::placeholder {
+    color: var(--md-sys-color-on-surface-variant) !important;
+}
+
+/* ============================================
+   ICON ANIMATIONS - Smooth & Physics-Based
+   ============================================ */
+svg, [class*="icon"] {
+    transition: transform var(--motion-duration-short) var(--motion-easing-decelerate) !important;
+    will-change: transform;
+}
+
+svg:hover, [class*="icon"]:hover {
+    transform: scale(1.1) rotate(5deg) !important;
+}
+
+/* ============================================
+   REDUCE ANIMATION ON PREFERS-REDUCED-MOTION
+   ============================================ */
+@media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}

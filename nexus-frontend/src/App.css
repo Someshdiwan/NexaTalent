@@ -1,0 +1,488 @@
+@import './theme.css';
+
+/* ============================================
+   APP CONTAINER
+   ============================================ */
+.app {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background: var(--md-sys-color-background);
+    transition: background-color var(--motion-duration-medium) var(--motion-easing-standard);
+    will-change: background-color;
+}
+
+/* ============================================
+   HEADER - Fixed & Aligned
+   ============================================ */
+.app-header {
+    background: var(--md-sys-color-surface);
+    border-bottom: 1px solid var(--md-sys-color-outline);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: var(--md-sys-elevation-1);
+    transition: all var(--motion-duration-medium) var(--motion-easing-standard);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    will-change: box-shadow, background-color;
+}
+
+.app-header.scrolled {
+    box-shadow: var(--md-sys-elevation-2);
+}
+
+.header-content {
+    max-width: 1440px;
+    margin: 0 auto;
+    padding: 12px 24px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 24px;
+    width: 100%;
+}
+
+.header-actions {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+    flex-shrink: 0;
+}
+
+/* ============================================
+   LOGO - Left Aligned & Smooth Animation
+   ============================================ */
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 24px;
+    font-weight: 700;
+    font-family: 'Comic Sans MS', 'Comic Neue', cursive, sans-serif !important;
+    color: var(--md-sys-color-on-surface);
+    margin: 0;
+    padding: 0;
+    cursor: pointer;
+    user-select: none;
+    flex-shrink: 0;
+    transition: transform var(--motion-duration-short) var(--motion-easing-standard),
+                color var(--motion-duration-short) var(--motion-easing-standard);
+    will-change: transform;
+}
+
+.logo:hover {
+    transform: scale(1.05);
+    color: var(--md-sys-color-primary);
+}
+
+.logo:active {
+    transform: scale(0.98);
+}
+
+.logo span:first-child {
+    display: inline-block;
+    animation: logoPulse 2s var(--motion-easing-standard) infinite;
+    will-change: transform;
+}
+
+@keyframes logoPulse {
+    0%, 100% { 
+        transform: scale(1) rotate(0deg);
+    }
+    50% { 
+        transform: scale(1.1) rotate(5deg);
+    }
+}
+
+/* ============================================
+   NAVIGATION TABS - Physics-Based Animations
+   ============================================ */
+.nav-tabs {
+    display: flex;
+    gap: 8px;
+    background: var(--md-sys-color-surface-container);
+    padding: 6px;
+    border-radius: var(--border-radius-pill);
+    flex: 1;
+    justify-content: center;
+    max-width: 800px;
+    border: 1px solid var(--md-sys-color-outline-variant);
+    box-shadow: var(--md-sys-elevation-1);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+}
+
+/* Ensure navigation tabs are visible in light mode */
+:root:not(.dark) .nav-tabs {
+    background: rgba(255, 255, 255, 0.95);
+    border-color: rgba(0, 0, 0, 0.1);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.nav-tab {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    padding: 10px 20px;
+    border: none;
+    background: transparent;
+    color: var(--md-sys-color-on-surface);
+    font-family: 'Comic Sans MS', 'Comic Neue', cursive, sans-serif !important;
+    font-size: 14px;
+    font-weight: 600;
+    border-radius: var(--border-radius-pill);
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    white-space: nowrap;
+    transition: color var(--motion-duration-short) var(--motion-easing-standard),
+                background-color var(--motion-duration-short) var(--motion-easing-standard);
+    will-change: transform, background-color;
+    z-index: 1;
+}
+
+.nav-tab::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: var(--md-sys-color-primary);
+    opacity: 0.1;
+    transition: left var(--motion-duration-medium) var(--motion-easing-decelerate);
+    z-index: -1;
+    will-change: left;
+}
+
+.nav-tab:hover {
+    background: var(--md-sys-color-surface-container-high);
+    color: var(--md-sys-color-on-surface);
+    transform: translateY(-1px);
+}
+
+.nav-tab:hover::before {
+    left: 0;
+}
+
+.nav-tab:active {
+    transform: translateY(0) scale(0.98);
+}
+
+.nav-tab.active {
+    background: var(--md-sys-color-surface);
+    color: var(--md-sys-color-primary);
+    box-shadow: var(--md-sys-elevation-2);
+    font-weight: 700;
+    border: 2px solid var(--md-sys-color-primary);
+}
+
+.nav-tab.active::before {
+    left: 0;
+    opacity: 0.15;
+}
+
+.nav-tab.active::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60%;
+    height: 2px;
+    background: var(--md-sys-color-primary);
+    border-radius: var(--border-radius-pill);
+    animation: slideIn var(--motion-duration-medium) var(--motion-easing-decelerate);
+}
+
+@keyframes slideIn {
+    from {
+        width: 0;
+        opacity: 0;
+    }
+    to {
+        width: 60%;
+        opacity: 1;
+    }
+}
+
+/* ============================================
+   ICON BUTTONS - Smooth & Responsive (Fixed Position)
+   ============================================ */
+.icon-btn {
+    width: 40px;
+    height: 40px;
+    min-width: 40px;
+    min-height: 40px;
+    border: none;
+    background: transparent;
+    color: var(--md-sys-color-on-surface);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: all var(--motion-duration-short) var(--motion-easing-standard);
+    flex-shrink: 0;
+    will-change: transform, background-color;
+    position: relative;
+    overflow: hidden;
+    padding: 0;
+    margin: 0;
+    line-height: 1;
+}
+
+.icon-btn::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    border-radius: 50%;
+    background: var(--md-sys-color-primary);
+    opacity: 0.1;
+    transform: translate(-50%, -50%);
+    transition: width var(--motion-duration-medium) var(--motion-easing-decelerate),
+                height var(--motion-duration-medium) var(--motion-easing-decelerate);
+}
+
+.icon-btn:hover {
+    background: var(--md-sys-color-surface-container);
+    color: var(--md-sys-color-on-surface);
+    transform: scale(1.1) rotate(5deg);
+}
+
+.icon-btn:hover::before {
+    width: 100%;
+    height: 100%;
+}
+
+.icon-btn:active {
+    transform: scale(0.95);
+}
+
+.icon-btn:active::before {
+    width: 120%;
+    height: 120%;
+}
+
+/* ============================================
+   SEARCH CONTAINER
+   ============================================ */
+.search-container {
+    max-width: 1440px;
+    margin: 0 auto;
+    padding: 16px 24px 0;
+    position: relative;
+    z-index: 100;
+}
+
+.search-bar {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    background: var(--md-sys-color-surface-container);
+    height: 56px;
+    border-radius: 28px;
+    padding: 0 24px;
+    border: 2px solid transparent;
+    transition: all var(--motion-duration-short) var(--motion-easing-standard);
+    will-change: border-color, box-shadow, background-color;
+}
+
+/* Ensure search bar is visible in light mode */
+:root:not(.dark) .search-bar {
+    background: rgba(255, 255, 255, 0.95);
+    border-color: rgba(0, 0, 0, 0.1);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.search-bar:focus-within {
+    background: var(--md-sys-color-surface);
+    border-color: var(--md-sys-color-primary);
+    box-shadow: var(--md-sys-elevation-2);
+}
+
+.search-input {
+    flex: 1;
+    border: none;
+    background: transparent;
+    font-family: 'Comic Sans MS', 'Comic Neue', cursive, sans-serif !important;
+    font-size: 16px;
+    font-weight: 400;
+    color: var(--md-sys-color-on-surface);
+    outline: none;
+}
+
+.search-input::placeholder {
+    color: var(--md-sys-color-on-surface-variant);
+}
+
+.search-results {
+    margin-top: 8px;
+    background: var(--md-sys-color-surface);
+    border-radius: var(--border-radius-card);
+    padding: 8px 0;
+    box-shadow: var(--md-sys-elevation-3);
+    border: 1px solid var(--md-sys-color-outline);
+    animation: fadeIn var(--motion-duration-medium) var(--motion-easing-emphasized);
+    will-change: opacity, transform;
+}
+
+.search-result-item {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    padding: 12px 24px;
+    border: none;
+    background: transparent;
+    width: 100%;
+    text-align: left;
+    cursor: pointer;
+    transition: background-color var(--motion-duration-short) var(--motion-easing-standard);
+    font-family: 'Comic Sans MS', 'Comic Neue', cursive, sans-serif !important;
+}
+
+.search-result-item:hover {
+    background-color: var(--md-sys-color-surface-container);
+}
+
+.result-avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--md-sys-color-primary), var(--md-sys-color-secondary));
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 14px;
+    flex-shrink: 0;
+    font-family: 'Comic Sans MS', 'Comic Neue', cursive, sans-serif !important;
+}
+
+.result-info {
+    flex: 1;
+}
+
+.result-name {
+    color: var(--md-sys-color-on-surface);
+    font-family: 'Comic Sans MS', 'Comic Neue', cursive, sans-serif !important;
+    font-weight: 700;
+    font-size: 15px;
+}
+
+.result-meta {
+    color: var(--md-sys-color-on-surface-variant);
+    font-family: 'Comic Sans MS', 'Comic Neue', cursive, sans-serif !important;
+    font-size: 13px;
+    font-weight: 400;
+}
+
+.search-empty {
+    padding: 24px;
+    text-align: center;
+    color: var(--md-sys-color-on-surface-variant);
+    font-family: 'Comic Sans MS', 'Comic Neue', cursive, sans-serif !important;
+}
+
+/* ============================================
+   MAIN CONTENT
+   ============================================ */
+.app-main {
+    flex: 1;
+    animation: fadeIn var(--motion-duration-medium) var(--motion-easing-emphasized);
+    will-change: opacity;
+}
+
+.view-transition {
+    animation: fadeIn var(--motion-duration-medium) var(--motion-easing-emphasized);
+    will-change: opacity, transform;
+}
+
+/* ============================================
+   RESPONSIVE DESIGN
+   ============================================ */
+@media (max-width: 768px) {
+    .header-content {
+        padding: 12px 16px;
+        gap: 12px;
+    }
+
+    .logo {
+        font-size: 20px;
+        gap: 8px;
+    }
+
+    .nav-tabs {
+        gap: 4px;
+        padding: 2px;
+        overflow-x: auto;
+        scrollbar-width: none;
+        -ms-overflow-style: none;
+    }
+
+    .nav-tabs::-webkit-scrollbar {
+        display: none;
+    }
+
+    .nav-tab {
+        padding: 8px 16px;
+        font-size: 13px;
+        white-space: nowrap;
+    }
+
+    .icon-btn {
+        width: 36px;
+        height: 36px;
+    }
+}
+
+@media (max-width: 480px) {
+    .logo span:last-child {
+        display: none;
+    }
+
+    .nav-tab span:not(.nav-icon) {
+        display: none;
+    }
+
+    .nav-tab {
+        padding: 8px 12px;
+        min-width: 40px;
+    }
+}
+
+/* ============================================
+   LIGHT MODE FIXES — nav, icon-btn, header
+   ============================================ */
+:root:not(.dark) .nav-tab:hover {
+    background: #e8f0fe;
+    color: #1a73e8;
+}
+
+:root:not(.dark) .nav-tab.active {
+    background: #ffffff;
+    color: #1a73e8;
+    border-color: #1a73e8;
+    box-shadow: 0 2px 8px rgba(26,115,232,0.15);
+}
+
+:root:not(.dark) .icon-btn:hover {
+    background: #e8f0fe;
+    color: #1a73e8;
+}
+
+:root:not(.dark) .app-header {
+    background: rgba(255,255,255,0.97);
+    border-bottom-color: #dadce0;
+}
+
+:root:not(.dark) .nav-tabs {
+    background: #f8f9fa;
+    border-color: #dadce0;
+}

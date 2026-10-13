@@ -1,0 +1,417 @@
+/* ============================================
+   HOME PAGE - Landing & Introduction
+   ============================================ */
+
+.home-page {
+    max-width: 1440px;
+    margin: 0 auto;
+    padding: 48px 24px;
+    animation: fadeIn var(--motion-duration-medium) var(--motion-easing-emphasized);
+}
+
+/* ============================================
+   HERO SECTION
+   ============================================ */
+
+.hero-section {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 64px;
+    align-items: center;
+    margin-bottom: 80px;
+    padding: 64px 0;
+}
+
+.hero-content {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.hero-badge {
+    display: inline-block;
+    padding: 8px 16px;
+    background: var(--md-sys-color-primary-container);
+    color: var(--md-sys-color-on-primary-container);
+    border-radius: var(--border-radius-pill);
+    font-size: 14px;
+    font-weight: 600;
+    width: fit-content;
+    font-family: 'Comic Sans MS', 'Comic Neue', cursive, sans-serif !important;
+}
+
+.hero-title {
+    font-size: 64px;
+    font-weight: 700;
+    color: var(--md-sys-color-on-surface);
+    line-height: 1.1;
+    margin: 0;
+    font-family: 'Comic Sans MS', 'Comic Neue', cursive, sans-serif !important;
+    background: linear-gradient(135deg, var(--md-sys-color-primary), var(--md-sys-color-secondary));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.hero-subtitle {
+    font-size: 28px;
+    font-weight: 600;
+    color: var(--md-sys-color-on-surface);
+    margin: 0;
+    font-family: 'Comic Sans MS', 'Comic Neue', cursive, sans-serif !important;
+}
+
+.hero-description {
+    font-size: 18px;
+    color: var(--md-sys-color-on-surface-variant);
+    line-height: 1.6;
+    margin: 0;
+    font-family: 'Comic Sans MS', 'Comic Neue', cursive, sans-serif !important;
+}
+
+.hero-actions {
+    display: flex;
+    gap: 16px;
+    margin-top: 8px;
+}
+
+.btn-primary-large,
+.btn-secondary-large {
+    padding: 16px 32px;
+    border-radius: var(--border-radius-pill);
+    font-size: 16px;
+    font-weight: 700;
+    font-family: 'Comic Sans MS', 'Comic Neue', cursive, sans-serif !important;
+    cursor: pointer;
+    transition: all var(--motion-duration-short) var(--motion-easing-standard);
+    border: none;
+    will-change: transform;
+}
+
+.btn-primary-large {
+    background: linear-gradient(135deg, var(--md-sys-color-primary), var(--md-sys-color-secondary));
+    color: white;
+    box-shadow: var(--md-sys-elevation-2);
+}
+
+.btn-primary-large:hover {
+    transform: translateY(-2px) scale(1.02);
+    box-shadow: var(--md-sys-elevation-4);
+}
+
+.btn-primary-large:active {
+    transform: translateY(0) scale(0.98);
+}
+
+.btn-secondary-large {
+    background: var(--md-sys-color-surface-container);
+    color: var(--md-sys-color-on-surface);
+    border: 2px solid var(--md-sys-color-outline);
+}
+
+.btn-secondary-large:hover {
+    background: var(--md-sys-color-surface-container-high);
+    border-color: var(--md-sys-color-primary);
+    transform: translateY(-2px);
+}
+
+.hero-visual {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.visual-card {
+    width: 300px;
+    height: 300px;
+    background: linear-gradient(135deg, var(--md-sys-color-primary), var(--md-sys-color-secondary));
+    border-radius: var(--border-radius-card);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 24px;
+    box-shadow: var(--md-sys-elevation-4);
+    animation: float 3s var(--motion-easing-standard) infinite;
+}
+
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-20px);
+    }
+}
+
+.visual-icon {
+    font-size: 80px;
+}
+
+.visual-text {
+    font-size: 48px;
+    font-weight: 700;
+    color: white;
+    font-family: 'Comic Sans MS', 'Comic Neue', cursive, sans-serif !important;
+}
+
+/* ============================================
+   FEATURES SECTION
+   ============================================ */
+
+.features-section {
+    margin-bottom: 80px;
+}
+
+.section-title {
+    font-size: 36px;
+    font-weight: 700;
+    color: var(--md-sys-color-on-surface);
+    text-align: center;
+    margin-bottom: 48px;
+    font-family: 'Comic Sans MS', 'Comic Neue', cursive, sans-serif !important;
+}
+
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 32px;
+}
+
+.feature-card {
+    background: linear-gradient(135deg,
+        var(--md-sys-color-surface) 0%,
+        var(--md-sys-color-surface-container) 100%);
+    border: 1px solid var(--md-sys-color-outline-variant);
+    border-radius: var(--border-radius-card);
+    padding: 32px;
+    transition: all var(--motion-duration-medium) var(--motion-easing-standard);
+    will-change: transform, box-shadow;
+    position: relative;
+    overflow: hidden;
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+}
+
+.feature-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, var(--md-sys-color-primary), var(--md-sys-color-secondary), var(--md-sys-color-tertiary));
+    border-radius: var(--border-radius-card) var(--border-radius-card) 0 0;
+}
+
+.feature-card:hover {
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: var(--md-sys-elevation-4);
+    border-color: var(--md-sys-color-primary);
+    background: linear-gradient(135deg,
+        var(--md-sys-color-surface-container) 0%,
+        var(--md-sys-color-surface) 100%);
+}
+
+.feature-card:hover::before {
+    height: 6px;
+    box-shadow: 0 0 20px rgba(26, 115, 232, 0.3);
+}
+
+.feature-icon {
+    font-size: 48px;
+    margin-bottom: 16px;
+}
+
+.feature-title {
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--md-sys-color-on-surface);
+    margin-bottom: 12px;
+    font-family: 'Comic Sans MS', 'Comic Neue', cursive, sans-serif !important;
+}
+
+.feature-description {
+    font-size: 15px;
+    color: var(--md-sys-color-on-surface-variant);
+    line-height: 1.6;
+    margin: 0;
+    font-family: 'Comic Sans MS', 'Comic Neue', cursive, sans-serif !important;
+}
+
+/* ============================================
+   HOW IT WORKS SECTION
+   ============================================ */
+
+.how-it-works-section {
+    margin-bottom: 80px;
+}
+
+.steps-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 24px;
+    flex-wrap: wrap;
+}
+
+.step-card {
+    flex: 1;
+    min-width: 200px;
+    max-width: 250px;
+    background: linear-gradient(135deg,
+        var(--md-sys-color-surface) 0%,
+        var(--md-sys-color-surface-container) 100%);
+    border: 1px solid var(--md-sys-color-outline-variant);
+    border-radius: var(--border-radius-card);
+    padding: 32px;
+    text-align: center;
+    transition: all var(--motion-duration-medium) var(--motion-easing-standard);
+    will-change: transform;
+    position: relative;
+    overflow: hidden;
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+}
+
+.step-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, var(--md-sys-color-primary), var(--md-sys-color-secondary), var(--md-sys-color-tertiary));
+    border-radius: var(--border-radius-card) var(--border-radius-card) 0 0;
+}
+
+.step-card:hover {
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: var(--md-sys-elevation-4);
+    border-color: var(--md-sys-color-primary);
+    background: linear-gradient(135deg,
+        var(--md-sys-color-surface-container) 0%,
+        var(--md-sys-color-surface) 100%);
+}
+
+.step-card:hover::before {
+    height: 6px;
+    box-shadow: 0 0 20px rgba(26, 115, 232, 0.3);
+}
+
+.step-number {
+    width: 56px;
+    height: 56px;
+    background: linear-gradient(135deg, var(--md-sys-color-primary), var(--md-sys-color-secondary));
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    font-weight: 700;
+    margin: 0 auto 16px;
+    font-family: 'Comic Sans MS', 'Comic Neue', cursive, sans-serif !important;
+}
+
+.step-title {
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--md-sys-color-on-surface);
+    margin-bottom: 8px;
+    font-family: 'Comic Sans MS', 'Comic Neue', cursive, sans-serif !important;
+}
+
+.step-description {
+    font-size: 14px;
+    color: var(--md-sys-color-on-surface-variant);
+    line-height: 1.5;
+    margin: 0;
+    font-family: 'Comic Sans MS', 'Comic Neue', cursive, sans-serif !important;
+}
+
+.step-arrow {
+    font-size: 32px;
+    color: var(--md-sys-color-primary);
+    font-weight: 700;
+    flex-shrink: 0;
+}
+
+/* ============================================
+   CTA SECTION
+   ============================================ */
+
+.cta-section {
+    background: linear-gradient(135deg, var(--md-sys-color-primary-container), var(--md-sys-color-secondary-container));
+    border-radius: var(--border-radius-card);
+    padding: 64px 32px;
+    text-align: center;
+    margin-top: 80px;
+}
+
+.cta-content {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.cta-title {
+    font-size: 32px;
+    font-weight: 700;
+    color: var(--md-sys-color-on-primary-container);
+    margin-bottom: 16px;
+    font-family: 'Comic Sans MS', 'Comic Neue', cursive, sans-serif !important;
+}
+
+.cta-description {
+    font-size: 18px;
+    color: var(--md-sys-color-on-primary-container);
+    margin-bottom: 32px;
+    opacity: 0.9;
+    font-family: 'Comic Sans MS', 'Comic Neue', cursive, sans-serif !important;
+}
+
+/* ============================================
+   RESPONSIVE
+   ============================================ */
+
+@media (max-width: 768px) {
+    .hero-section {
+        grid-template-columns: 1fr;
+        gap: 32px;
+        padding: 32px 0;
+    }
+
+    .hero-title {
+        font-size: 48px;
+    }
+
+    .hero-subtitle {
+        font-size: 24px;
+    }
+
+    .hero-actions {
+        flex-direction: column;
+    }
+
+    .btn-primary-large,
+    .btn-secondary-large {
+        width: 100%;
+    }
+
+    .visual-card {
+        width: 250px;
+        height: 250px;
+    }
+
+    .features-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .steps-container {
+        flex-direction: column;
+    }
+
+    .step-arrow {
+        transform: rotate(90deg);
+    }
+}

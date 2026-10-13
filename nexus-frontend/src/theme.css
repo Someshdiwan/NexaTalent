@@ -1,0 +1,533 @@
+/* ============================================
+   NEXUS THEME - Google Material Design 3 + Premium Polish
+   ============================================ */
+
+@import url('https://fonts.googleapis.com/css2?family=Comic+Neue:wght@300;400;700&display=swap');
+
+:root {
+    /* ============================================
+       FONT FAMILY - Comic Sans MS Everywhere
+       ============================================ */
+    --font-family: 'Comic Sans MS', 'Comic Neue', cursive, sans-serif;
+    --font-family-display: 'Comic Sans MS', 'Comic Neue', cursive, sans-serif;
+    --font-family-mono: 'Comic Sans MS', 'Comic Neue', cursive, monospace;
+
+    /* ============================================
+       LIGHT THEME (Default)
+       ============================================ */
+
+    /* Primary Colors - Google Blue */
+    --md-sys-color-primary: #1a73e8;
+    --md-sys-color-on-primary: #ffffff;
+    --md-sys-color-primary-container: #d3e3fd;
+    --md-sys-color-on-primary-container: #001d35;
+
+    /* Secondary Colors - Google Yellow */
+    --md-sys-color-secondary: #fbbc04;
+    --md-sys-color-on-secondary: #202124;
+    --md-sys-color-secondary-container: #fef7e0;
+    --md-sys-color-on-secondary-container: #3d2e00;
+
+    /* Tertiary Colors - Google Red */
+    --md-sys-color-tertiary: #ea4335;
+    --md-sys-color-on-tertiary: #ffffff;
+    --md-sys-color-tertiary-container: #fce8e6;
+    --md-sys-color-on-tertiary-container: #410e0b;
+
+    /* Error Colors */
+    --md-sys-color-error: #ea4335;
+    --md-sys-color-on-error: #ffffff;
+    --md-sys-color-error-container: #fce8e6;
+    --md-sys-color-on-error-container: #410e0b;
+
+    /* Surface Colors - Google Light (Enhanced Contrast) */
+    --md-sys-color-background: #ffffff;
+    --md-sys-color-on-background: #202124;
+    --md-sys-color-surface: #ffffff;
+    --md-sys-color-on-surface: #202124;
+    --md-sys-color-surface-variant: #f8f9fa;
+    --md-sys-color-on-surface-variant: #5f6368;
+    --md-sys-color-surface-container: #f1f3f4;
+    --md-sys-color-surface-container-high: #e8eaed;
+    --md-sys-color-surface-container-highest: #dadce0;
+    
+    /* Light Mode Text Colors - Enhanced */
+    --text-primary: #202124;
+    --text-secondary: #5f6368;
+    --text-tertiary: #80868b;
+
+    /* Outline Colors */
+    --md-sys-color-outline: #dadce0;
+    --md-sys-color-outline-variant: #e8eaed;
+
+    /* Status Colors */
+    --md-sys-color-success: #34a853;
+    --md-sys-color-warning: #fbbc04;
+    --md-sys-color-info: #1a73e8;
+
+    /* Elevation Shadows - Google Style */
+    --md-sys-elevation-1: 0 1px 2px 0 rgba(60, 64, 67, 0.3), 0 1px 3px 1px rgba(60, 64, 67, 0.15);
+    --md-sys-elevation-2: 0 1px 3px 0 rgba(60, 64, 67, 0.3), 0 4px 8px 3px rgba(60, 64, 67, 0.15);
+    --md-sys-elevation-3: 0 2px 6px 2px rgba(60, 64, 67, 0.15), 0 1px 2px 0 rgba(60, 64, 67, 0.3);
+    --md-sys-elevation-4: 0 4px 8px 3px rgba(60, 64, 67, 0.15), 0 1px 3px 0 rgba(60, 64, 67, 0.3);
+
+    /* Border Radius - Google Style */
+    --border-radius-sm: 4px;
+    --border-radius-md: 8px;
+    --border-radius-lg: 12px;
+    --border-radius-xl: 16px;
+    --border-radius-card: 24px;
+    --border-radius-pill: 999px;
+
+    /* Motion - Google Material Motion */
+    --motion-easing-standard: cubic-bezier(0.2, 0, 0, 1);
+    --motion-easing-emphasized: cubic-bezier(0.2, 0, 0, 1);
+    --motion-easing-decelerate: cubic-bezier(0, 0, 0.2, 1);
+    --motion-easing-accelerate: cubic-bezier(0.4, 0, 1, 1);
+    --motion-duration-short: 150ms;
+    --motion-duration-medium: 250ms;
+    --motion-duration-long: 350ms;
+    --motion-duration-extra-long: 500ms;
+
+    /* Transitions */
+    --transition-fast: 150ms cubic-bezier(0.2, 0, 0, 1);
+    --transition-base: 250ms cubic-bezier(0.2, 0, 0, 1);
+    --transition-slow: 350ms cubic-bezier(0.2, 0, 0, 1);
+}
+
+/* ============================================
+   DARK THEME - Enhanced Google Dark Mode
+   ============================================ */
+.dark {
+    /* Primary Colors - Lighter Blue for Dark */
+    --md-sys-color-primary: #8ab4f8;
+    --md-sys-color-on-primary: #0d47a1;
+    --md-sys-color-primary-container: #1e3a8a;
+    --md-sys-color-on-primary-container: #d3e3fd;
+
+    /* Secondary Colors */
+    --md-sys-color-secondary: #fdd663;
+    --md-sys-color-on-secondary: #3d2e00;
+    --md-sys-color-secondary-container: #5d4e00;
+    --md-sys-color-on-secondary-container: #fef7e0;
+
+    /* Tertiary Colors */
+    --md-sys-color-tertiary: #f28b82;
+    --md-sys-color-on-tertiary: #5a1f1a;
+    --md-sys-color-tertiary-container: #8b1a0e;
+    --md-sys-color-on-tertiary-container: #fce8e6;
+
+    /* Error Colors */
+    --md-sys-color-error: #f28b82;
+    --md-sys-color-on-error: #5a1f1a;
+    --md-sys-color-error-container: #8b1a0e;
+    --md-sys-color-on-error-container: #fce8e6;
+
+    /* Surface Colors - Google Dark */
+    --md-sys-color-background: #202124;
+    --md-sys-color-on-background: #e8eaed;
+    --md-sys-color-surface: #303134;
+    --md-sys-color-on-surface: #e8eaed;
+    --md-sys-color-surface-variant: #3c4043;
+    --md-sys-color-on-surface-variant: #9aa0a6;
+    --md-sys-color-surface-container: #303134;
+    --md-sys-color-surface-container-high: #3c4043;
+    --md-sys-color-surface-container-highest: #5f6368;
+    
+    /* Dark Mode Text Colors - Enhanced */
+    --text-primary: #e8eaed;
+    --text-secondary: #9aa0a6;
+    --text-tertiary: #5f6368;
+
+    /* Outline Colors */
+    --md-sys-color-outline: #5f6368;
+    --md-sys-color-outline-variant: #3c4043;
+
+    /* Enhanced Elevation for Dark */
+    --md-sys-elevation-1: 0 1px 2px 0 rgba(0, 0, 0, 0.3), 0 1px 3px 1px rgba(0, 0, 0, 0.15);
+    --md-sys-elevation-2: 0 1px 3px 0 rgba(0, 0, 0, 0.3), 0 4px 8px 3px rgba(0, 0, 0, 0.15);
+    --md-sys-elevation-3: 0 2px 6px 2px rgba(0, 0, 0, 0.3), 0 1px 2px 0 rgba(0, 0, 0, 0.2);
+    --md-sys-elevation-4: 0 4px 8px 3px rgba(0, 0, 0, 0.3), 0 1px 3px 0 rgba(0, 0, 0, 0.2);
+}
+
+/* ============================================
+   GLOBAL RESET & BASE STYLES
+   ============================================ */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    font-size: 16px;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: var(--font-family) !important;
+    background-color: var(--md-sys-color-background);
+    color: var(--md-sys-color-on-background);
+    line-height: 1.5;
+    min-height: 100vh;
+    transition: background-color var(--motion-duration-medium) var(--motion-easing-standard),
+                color var(--motion-duration-medium) var(--motion-easing-standard);
+    overflow-x: hidden;
+}
+
+/* Force Comic Sans MS on all elements */
+*, *::before, *::after,
+input, textarea, select, button {
+    font-family: var(--font-family) !important;
+}
+
+/* ============================================
+   TYPOGRAPHY - Comic Sans MS
+   ============================================ */
+h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-family-display) !important;
+    font-weight: 700;
+    line-height: 1.2;
+    letter-spacing: -0.01em;
+}
+
+h1 { font-size: 2.5rem; font-weight: 700; }
+h2 { font-size: 1.875rem; font-weight: 700; }
+h3 { font-size: 1.5rem; font-weight: 700; }
+h4 { font-size: 1.25rem; font-weight: 700; }
+h5 { font-size: 1.125rem; font-weight: 600; }
+h6 { font-size: 1rem; font-weight: 600; }
+
+p, span, div, a, li, td, th {
+    font-family: var(--font-family) !important;
+}
+
+p {
+    color: var(--md-sys-color-on-surface-variant);
+}
+
+a {
+    color: var(--md-sys-color-primary);
+    text-decoration: none;
+    transition: color var(--motion-duration-short) var(--motion-easing-standard);
+}
+
+a:hover {
+    color: var(--md-sys-color-secondary);
+    text-decoration: underline;
+}
+
+/* ============================================
+   ENHANCED ANIMATIONS - Google Material Motion
+   ============================================ */
+
+/* Fade In */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(8px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Slide In */
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateX(-16px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* Scale In */
+@keyframes scaleIn {
+    from {
+        opacity: 0;
+        transform: scale(0.96);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* Slide Up */
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(16px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Pulse */
+@keyframes pulse {
+    0%, 100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+    50% {
+        opacity: 0.8;
+        transform: scale(1.02);
+    }
+}
+
+/* Ripple Effect */
+@keyframes ripple {
+    0% {
+        transform: scale(0);
+        opacity: 1;
+    }
+    100% {
+        transform: scale(4);
+        opacity: 0;
+    }
+}
+
+/* Shimmer Loading */
+@keyframes shimmer {
+    0% {
+        background-position: -1000px 0;
+    }
+    100% {
+        background-position: 1000px 0;
+    }
+}
+
+/* Smooth Fade */
+@keyframes smoothFade {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* Animation utility classes */
+.animate-fade-in {
+    animation: fadeIn var(--motion-duration-medium) var(--motion-easing-emphasized) forwards;
+}
+
+.animate-slide-in {
+    animation: slideIn var(--motion-duration-medium) var(--motion-easing-emphasized) forwards;
+}
+
+.animate-scale-in {
+    animation: scaleIn var(--motion-duration-medium) var(--motion-easing-emphasized) forwards;
+}
+
+.animate-slide-up {
+    animation: slideUp var(--motion-duration-medium) var(--motion-easing-emphasized) forwards;
+}
+
+.animate-pulse {
+    animation: pulse 2s var(--motion-easing-standard) infinite;
+}
+
+.fade-in {
+    opacity: 0;
+    transition: opacity var(--motion-duration-medium) var(--motion-easing-emphasized),
+                transform var(--motion-duration-medium) var(--motion-easing-emphasized);
+}
+
+.fade-in.visible {
+    opacity: 1;
+}
+
+/* Stagger animations */
+.animate-stagger > * {
+    animation: fadeIn var(--motion-duration-medium) var(--motion-easing-emphasized) forwards;
+    opacity: 0;
+}
+
+.animate-stagger > *:nth-child(1) { animation-delay: 0ms; }
+.animate-stagger > *:nth-child(2) { animation-delay: 50ms; }
+.animate-stagger > *:nth-child(3) { animation-delay: 100ms; }
+.animate-stagger > *:nth-child(4) { animation-delay: 150ms; }
+.animate-stagger > *:nth-child(5) { animation-delay: 200ms; }
+.animate-stagger > *:nth-child(6) { animation-delay: 250ms; }
+.animate-stagger > *:nth-child(7) { animation-delay: 300ms; }
+.animate-stagger > *:nth-child(8) { animation-delay: 350ms; }
+
+/* ============================================
+   SCROLLBAR STYLING - Google Style
+   ============================================ */
+::-webkit-scrollbar {
+    width: 12px;
+    height: 12px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--md-sys-color-surface-container);
+    border-radius: 6px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--md-sys-color-outline);
+    border-radius: 6px;
+    border: 2px solid var(--md-sys-color-surface-container);
+    transition: background var(--motion-duration-short) var(--motion-easing-standard);
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--md-sys-color-on-surface-variant);
+}
+
+/* ============================================
+   FOCUS STATES - Google Style
+   ============================================ */
+*:focus-visible {
+    outline: 2px solid var(--md-sys-color-primary);
+    outline-offset: 2px;
+    border-radius: var(--border-radius-sm);
+    transition: outline var(--motion-duration-short) var(--motion-easing-standard);
+}
+
+/* ============================================
+   SELECTION - Google Style
+   ============================================ */
+::selection {
+    background-color: var(--md-sys-color-primary);
+    color: var(--md-sys-color-on-primary);
+}
+
+::-moz-selection {
+    background-color: var(--md-sys-color-primary);
+    color: var(--md-sys-color-on-primary);
+}
+
+/* ============================================
+   BUTTONS - Google Material Style
+   ============================================ */
+button {
+    font-family: var(--font-family) !important;
+    transition: all var(--motion-duration-short) var(--motion-easing-standard);
+    cursor: pointer;
+}
+
+button:hover {
+    transform: translateY(-1px);
+    box-shadow: var(--md-sys-elevation-2);
+}
+
+button:active {
+    transform: translateY(0);
+    box-shadow: var(--md-sys-elevation-1);
+}
+
+/* ============================================
+   INPUTS - Google Material Style
+   ============================================ */
+input, textarea, select {
+    font-family: var(--font-family) !important;
+    transition: all var(--motion-duration-short) var(--motion-easing-standard);
+}
+
+input:focus, textarea:focus, select:focus {
+    transform: scale(1.01);
+    box-shadow: var(--md-sys-elevation-2);
+}
+
+/* ============================================
+   CARDS - Google Material Style
+   ============================================ */
+.card, [class*="card"] {
+    transition: all var(--motion-duration-medium) var(--motion-easing-standard);
+}
+
+.card:hover, [class*="card"]:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--md-sys-elevation-3);
+}
+
+/* ============================================
+   UTILITIES
+   ============================================ */
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+}
+
+.truncate {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+/* Smooth transitions for theme changes */
+* {
+    transition: background-color var(--motion-duration-medium) var(--motion-easing-standard),
+                color var(--motion-duration-medium) var(--motion-easing-standard),
+                border-color var(--motion-duration-medium) var(--motion-easing-standard);
+}
+
+/* ============================================
+   APP CONTAINER
+   ============================================ */
+#root {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.app-container {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.main-content {
+    flex: 1;
+    padding: 24px;
+    animation: fadeIn var(--motion-duration-medium) var(--motion-easing-emphasized);
+}
+
+/* ============================================
+   LIGHT MODE GLOBAL FIXES
+   ============================================ */
+:root:not(.dark) button:hover {
+    background-color: inherit;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.12);
+}
+
+/* Make selection highlight visible in light mode */
+:root:not(.dark) ::selection {
+    background-color: #d3e3fd;
+    color: #001d35;
+}
+
+/* Ensure text is always readable in light mode */
+:root:not(.dark) .dashboard-title,
+:root:not(.dark) .section-title,
+:root:not(.dark) .engineer-name,
+:root:not(.dark) .stat-value {
+    color: #202124;
+}
+
+:root:not(.dark) .dashboard-subtitle,
+:root:not(.dark) .engineer-email,
+:root:not(.dark) .stat-label,
+:root:not(.dark) .result-meta {
+    color: #5f6368;
+}

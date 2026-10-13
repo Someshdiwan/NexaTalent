@@ -1,0 +1,112 @@
+.capability-slider {
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(102, 126, 234, 0.2);
+    border-radius: 12px;
+    transition: all 0.3s ease;
+}
+
+.capability-slider:hover {
+    background: rgba(255, 255, 255, 0.05);
+    border-color: rgba(102, 126, 234, 0.4);
+}
+
+.slider-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 16px;
+}
+
+.slider-label {
+    font-size: 14px;
+    font-weight: 600;
+    color: #f1f5f9;
+}
+
+.slider-value {
+    font-size: 18px;
+    font-weight: 700;
+    color: #06b6d4;
+}
+
+.slider-track {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 12px;
+    position: relative;
+}
+
+.slider-track::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: rgba(102, 126, 234, 0.2);
+    transform: translateY(-50%);
+    z-index: 0;
+}
+
+.slider-dot {
+    position: relative;
+    z-index: 1;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.1);
+    border: 2px solid rgba(102, 126, 234, 0.3);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.slider-dot:hover {
+    transform: scale(1.2);
+    border-color: rgba(102, 126, 234, 0.6);
+    background: rgba(102, 126, 234, 0.2);
+}
+
+.slider-dot.active {
+    background: linear-gradient(135deg, #06b6d4 0%, #3b82f6 100%);
+    border-color: #06b6d4;
+    box-shadow: 0 4px 12px rgba(6, 182, 212, 0.4);
+}
+
+.slider-dot.active .dot-inner {
+    width: 8px;
+    height: 8px;
+    background: white;
+    border-radius: 50%;
+}
+
+.slider-dot:active {
+    transform: scale(1.1);
+}
+
+.slider-labels {
+    display: flex;
+    justify-content: space-between;
+    font-size: 11px;
+    color: #64748b;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+/* Mobile responsiveness */
+@media (max-width: 640px) {
+    .slider-dot {
+        width: 28px;
+        height: 28px;
+    }
+
+    .slider-value {
+        font-size: 16px;
+    }
+}
