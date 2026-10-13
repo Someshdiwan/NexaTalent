@@ -40,7 +40,8 @@ public class UserRegistrationRequest {
     public User toEntity() {
         return User.builder()
                 .email(email)
-                .password(password) // Will be encoded by service
+                .password(password)
+                // Will be encoded by service
                 .firstName(firstName)
                 .lastName(lastName)
                 .role(role)
