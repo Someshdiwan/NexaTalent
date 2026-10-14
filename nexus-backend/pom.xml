@@ -121,8 +121,8 @@
 						<configuration>
 							<rules>
 								<requireJavaVersion>
-									<version>[17,18)</version>
-									<message>Project requires Java 17.x; install Temurin 17 (LTS) or update JAVA_HOME.</message>
+									<version>[17,22)</version>
+									<message>Project requires Java 17–21; install Temurin 17/21 (LTS) or update JAVA_HOME.</message>
 								</requireJavaVersion>
 							</rules>
 						</configuration>
