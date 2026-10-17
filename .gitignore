@@ -1,12 +1,8 @@
-############################
 # Nested / backup git
-############################
 .git.nested-backup/
 **/.git.nested-backup/
 
-############################
 # Logs
-############################
 logs/
 *.log
 npm-debug.log*
@@ -14,10 +10,8 @@ yarn-debug.log*
 yarn-error.log*
 pnpm-debug.log*
 
-############################
 # Node / Frontend
-############################
-node_modules/
+# node_modules/
 dist/
 dist-ssr/
 .vite/
@@ -26,9 +20,7 @@ dist-ssr/
 .env.*
 !.env.example
 
-############################
 # Java / Spring Boot
-############################
 target/
 out/
 *.class
@@ -39,9 +31,7 @@ hs_err_pid*
 .mvn/wrapper/maven-wrapper.jar
 HELP.md
 
-############################
 # IDEs
-############################
 .idea/
 *.iws
 *.iml
@@ -56,9 +46,7 @@ HELP.md
 .springBeans
 .sts4-cache
 
-############################
 # OS / misc
-############################
 .DS_Store
 Thumbs.db
 .cache/
@@ -66,8 +54,11 @@ coverage/
 *.swp
 *.swo
 
-############################
 # Local notes (not part of the app)
-############################
 Understand Project/
 .github/java-upgrade/
+/.github/workflows/deploy.yml
+/EngineIQ.pdf
+/Phase of project.pdf
+/Roadmap detail.pdf
+/VIP Info.pdf
